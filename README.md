@@ -1,4 +1,4 @@
 # portfolio-website
-Vanilla JS
-HTML
-CSS
+Vanilla JS <br>
+HTML <br>
+CSS <br>
