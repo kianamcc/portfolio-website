@@ -80,6 +80,12 @@ h5 {
   z-index: 1;
 }
 
+@media only screen and (min-width: 768px) {
+  .window-container {
+    bottom: 20px;
+  }
+}
+
 #window {
   height: 100%;
   width: 100%;
@@ -798,6 +804,7 @@ h5 {
 
 .mobile-nav-links-active {
   display: flex;
+  gap: 11px;
   animation: nav-anim 300ms linear;
 }
 
@@ -844,7 +851,7 @@ h5 {
   }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .footer {
     display: flex;
   }
