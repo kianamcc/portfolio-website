@@ -9,6 +9,16 @@ const aboutContent = document.getElementById("aboutContent");
 const projectsContent = document.getElementById("projectsContent");
 const contactContent = document.getElementById("contactContent");
 
+/* MOBILE NAV */
+const hamburger = document.getElementById("hamburger");
+const hamburgerClose = document.getElementById("hamburgerClose");
+const mobileNavLinks = document.getElementById("mobileNavLinks");
+
+const mobileNavHome = document.getElementById("mobileNavHome");
+const mobileNavAbout = document.getElementById("mobileNavAbout");
+const mobileNavProjects = document.getElementById("mobileNavProjects");
+const mobileNavContact = document.getElementById("mobileNavContact");
+
 /* MODAL */
 const resumeButton = document.getElementById("resumeButton");
 const modal = document.getElementById("modal");
@@ -27,13 +37,30 @@ const hideAllContent = () => {
   aboutButton.classList.remove("nav-active");
   projectsButton.classList.remove("nav-active");
   contactButton.classList.remove("nav-active");
+
+  mobileNavHome.classList.remove("mobile-nav-active");
+  mobileNavAbout.classList.remove("mobile-nav-active");
+  mobileNavProjects.classList.remove("mobile-nav-active");
+  mobileNavContact.classList.remove("mobile-nav-active");
+};
+
+const toggleHamburger = () => {
+  if (mobileNavLinks.classList.contains("mobile-nav-links-active")) {
+    mobileNavLinks.classList.remove("mobile-nav-links-active");
+    hamburgerClose.classList.remove("active");
+    hamburger.classList.remove("inactive");
+  } else {
+    mobileNavLinks.classList.add("mobile-nav-links-active");
+    hamburgerClose.classList.add("active");
+    hamburger.classList.add("inactive");
+  }
 };
 
 /* EVENT LISTENERS */
 homeButton.addEventListener("click", () => {
   hideAllContent();
   homeContent.classList.add("active");
-  homeButton.classList.add("nav-active"); // todo add active color to active tab button
+  homeButton.classList.add("nav-active");
 });
 
 aboutButton.addEventListener("click", () => {
@@ -54,6 +81,38 @@ contactButton.addEventListener("click", () => {
   contactButton.classList.add("nav-active");
 });
 
+mobileNavHome.addEventListener("click", () => {
+  hideAllContent();
+  toggleHamburger();
+  homeContent.classList.add("active");
+  mobileNavLinks.classList.remove("mobile-nav-links-active");
+  mobileNavHome.classList.add("mobile-nav-active");
+});
+
+mobileNavAbout.addEventListener("click", () => {
+  hideAllContent();
+  toggleHamburger();
+  aboutContent.classList.add("active");
+  mobileNavLinks.classList.remove("mobile-nav-links-active");
+  mobileNavAbout.classList.add("mobile-nav-active");
+});
+
+mobileNavProjects.addEventListener("click", () => {
+  hideAllContent();
+  toggleHamburger();
+  projectsContent.classList.add("active");
+  mobileNavLinks.classList.remove("mobile-nav-links-active");
+  mobileNavProjects.classList.add("mobile-nav-active");
+});
+
+mobileNavContact.addEventListener("click", () => {
+  hideAllContent();
+  toggleHamburger();
+  contactContent.classList.add("active");
+  mobileNavLinks.classList.remove("mobile-nav-links-active");
+  mobileNavContact.classList.add("mobile-nav-active");
+});
+
 resumeButton.addEventListener("click", () => {
   modal.classList.add("active");
 });
@@ -70,6 +129,14 @@ modalYesButton.addEventListener("click", () => {
   modal.classList.remove("active");
 });
 
+hamburger.addEventListener("click", () => {
+  toggleHamburger();
+});
+
+hamburgerClose.addEventListener("click", () => {
+  toggleHamburger();
+});
+
 (function () {
   emailjs.init("aMVkzXndoCy2H8xMz");
 })();
@@ -83,17 +150,15 @@ window.onload = function () {
         function () {
           console.log("SUCCESS!");
           document.getElementById("contactForm").reset();
-          // show div of success
         },
         function (error) {
           console.log("FAILED...", error);
-          // show div of error
         }
       );
     });
 };
 
 /* jQuery */
-$(function () {
-  $(".draggable").draggable();
-});
+// $(function () {
+//   $(".draggable").draggable();
+// });
