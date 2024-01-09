@@ -115,7 +115,18 @@ h5 {
 
 .content {
   display: none;
-  margin: 0px 35px;
+}
+
+@media only screen and (min-width: 321px) {
+  .content {
+    margin: 0px 25px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .content {
+    margin: 0px 35px;
+  }
 }
 
 .pageHeader {
@@ -154,15 +165,34 @@ h5 {
   padding: 10px 50px;
   background-color: #003566;
   margin: 20px 0px 0px 0px;
+  position: relative;
 }
 
-#resumeButton:hover {
-  background-color: #0656a0;
+#resumeButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #0071da;
+  transition: transform 300ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+#resumeButton:hover::before {
+  transform: scaleX(1);
+}
+
+#resumeButton {
+  transition: color 300ms ease-in-out;
+  z-index: 1;
 }
 
 @media only screen and (min-width: 321px) {
   .home-intro-container {
-    padding: 0px 16px;
     margin-top: 50px;
   }
 
@@ -233,6 +263,8 @@ h5 {
 
   .about-container {
     gap: 16px;
+    height: calc(100vh - 200px);
+    overflow-y: scroll;
   }
 
   .about-image {
@@ -240,6 +272,11 @@ h5 {
     height: 75%;
     border-right: 8px solid #00fff9;
     border-bottom: 8px solid #9600ff;
+  }
+
+  .about-me-technologies {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 }
 
@@ -259,6 +296,11 @@ h5 {
     height: 55%;
     border-right: 25px solid #00fff9;
     border-bottom: 25px solid #9600ff;
+  }
+
+  .about-me-technologies {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
   }
 }
 
@@ -286,6 +328,7 @@ h5 {
 #projectsContent {
   overflow-y: scroll;
 }
+
 .project-top {
   display: flex;
   gap: 10px;
@@ -361,6 +404,7 @@ h5 {
 @media only screen and (min-width: 321px) {
   #projectsContent {
     margin: 0px 16px;
+    height: 85%;
   }
 
   .project-technologies {
@@ -378,15 +422,11 @@ h5 {
     flex-direction: column;
     height: 100%;
   }
-
-  .project-img {
-    display: none;
-  }
 }
 
 @media only screen and (min-width: 768px) {
   #projectsContent {
-    height: 80%;
+    height: 85%;
     margin: 0px 35px;
   }
 
@@ -401,8 +441,6 @@ h5 {
   }
 
   .project-img {
-    display: flex;
-    width: 100%;
     position: relative;
     top: 20px;
   }
@@ -417,10 +455,6 @@ h5 {
 @media only screen and (min-width: 1024px) {
   .project {
     flex-direction: row;
-  }
-
-  .project-img {
-    opacity: 1;
   }
 }
 
@@ -504,14 +538,13 @@ h5 {
 
 @media only screen and (min-width: 321px) {
   #contactForm {
-    width: 320px;
-    height: 280px;
+    width: 100%;
   }
 }
 
 @media only screen and (min-width: 768px) {
   #contactForm {
-    width: 400px;
+    width: 500px;
   }
 }
 
@@ -524,6 +557,7 @@ h5 {
   border-left: 2px white solid;
   border-right: 2px black solid;
   border-bottom: 2px black solid;
+  z-index: 2;
 }
 
 .modal-display {
