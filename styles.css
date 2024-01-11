@@ -10,7 +10,6 @@ body {
   font-family: "Source Code Pro", monospace;
   line-height: 1.7rem;
   overflow-x: hidden;
-  position: fixed;
 }
 
 @media only screen and (min-width: 321px) {
