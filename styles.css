@@ -2,8 +2,9 @@
 html,
 body {
   height: 100%;
-  width: 100%;
-  padding: 0;
+  width: 100;
+  padding: 0px;
+  padding: env(safe-area-inset);
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
@@ -926,6 +927,12 @@ h5 {
 @media only screen and (min-width: 768px) {
   .footer {
     display: flex;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 915px) and (orientation: landscape) {
+  .footer {
+    display: none;
   }
 }
 
