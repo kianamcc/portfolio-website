@@ -254,7 +254,7 @@ h5 {
   }
 
   .home-intro-container {
-    margin-bottom: 50px;
+    margin-bottom: 80px;
   }
 }
 
@@ -590,6 +590,12 @@ h5 {
 @media only screen and (min-width: 768px) {
   #contactForm {
     width: 500px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .contact-content-container {
+    margin-bottom: 80px;
   }
 }
 
