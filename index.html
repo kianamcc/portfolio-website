@@ -114,45 +114,47 @@
             </ul>
           </nav>
           <div id="homeContent" class="home content active">
-            <h2 class="pageHeader">Welcome</h2>
-            <div class="home-intro-container">
-              <!-- <img class="avatar" alt="" src="./assets/moi.jpg"></img> -->
-              <p class="home-description">Hi there! I'm</p>
-              <h3 class="home-name">
-                <span class="home-name-text">Kiana</span> McCullough.
-              </h3>
-              <p class="home-description">
-                A <span class="home-name-text">Web Developer</span> with a focus
-                in frontend development, dedicated to crafting user-friendly and
-                responsive websites.
-              </p>
-              <div id="modal" class="modal-display">
-                <div class="modal-top">
-                  <button id="modalCloseButton" class="button-transition">
-                    X
-                  </button>
-                </div>
-                <div class="modal-content">
-                  <h3 class="modal-text">Download resume?</h3>
-                  <div class="button-row">
-                    <a
-                      id="modalYesButton"
-                      class="modalButton"
-                      href="assets/KianaMcCullough_Resume.pdf"
-                      download="KianaMcCullough_Resume"
-                      >Yes</a
-                    ><button
-                      id="modalNoButton"
-                      class="modalButton button-transition"
-                    >
-                      No
+            <div class="home-container">
+              <h2 class="pageHeader">Welcome</h2>
+              <div class="home-intro-container">
+                <!-- <img class="avatar" alt="" src="./assets/moi.jpg"></img> -->
+                <p class="home-description">Hi there! I'm</p>
+                <h3 class="home-name">
+                  <span class="home-name-text">Kiana</span> McCullough.
+                </h3>
+                <p class="home-description">
+                  A <span class="home-name-text">Web Developer</span> with a
+                  focus in frontend development, dedicated to crafting
+                  user-friendly and responsive websites.
+                </p>
+                <div id="modal" class="modal-display">
+                  <div class="modal-top">
+                    <button id="modalCloseButton" class="button-transition">
+                      X
                     </button>
                   </div>
+                  <div class="modal-content">
+                    <h3 class="modal-text">Download resume?</h3>
+                    <div class="button-row">
+                      <a
+                        id="modalYesButton"
+                        class="modalButton"
+                        href="assets/KianaMcCullough_Resume.pdf"
+                        download="KianaMcCullough_Resume"
+                        >Yes</a
+                      ><button
+                        id="modalNoButton"
+                        class="modalButton button-transition"
+                      >
+                        No
+                      </button>
+                    </div>
+                  </div>
                 </div>
+                <button id="resumeButton" class="button-transition">
+                  Resume
+                </button>
               </div>
-              <button id="resumeButton" class="button-transition">
-                Resume
-              </button>
             </div>
           </div>
           <div id="aboutContent" class="content">
@@ -354,61 +356,64 @@
             </div>
           </div>
           <div id="contactContent" class="content">
-            <h2 class="pageHeader">Contact</h2>
             <div class="contact-container">
-              <h3>Let's get in touch!</h3>
-              <p>
-                Connect with me via
-                <a href="https://github.com/kianamcc" target="_blank">GitHub</a
-                >,
-                <a
-                  href="https://www.linkedin.com/in/kiana-mccullough/"
-                  target="_blank"
-                  >LinkedIn</a
-                >, <a href="mailto:kianamccu@gmail.com">email</a>, or use the
-                contact form below!
-              </p>
-              <form id="contactForm" class="contact-form">
-                <h4 class="contact-form-top">CONTACT_FORM</h4>
-                <div class="contact-content">
-                  <div class="contact-left">
-                    <h5 class="contact-input-title">Name</h5>
-                    <h5 class="contact-input-title">Email</h5>
-                    <h5 class="contact-input-title">Message</h5>
+              <h2 class="pageHeader">Contact</h2>
+              <div class="contact-content-container">
+                <h3>Let's get in touch!</h3>
+                <p>
+                  Connect with me via
+                  <a href="https://github.com/kianamcc" target="_blank"
+                    >GitHub</a
+                  >,
+                  <a
+                    href="https://www.linkedin.com/in/kiana-mccullough/"
+                    target="_blank"
+                    >LinkedIn</a
+                  >, <a href="mailto:kianamccu@gmail.com">email</a>, or use the
+                  contact form below!
+                </p>
+                <form id="contactForm" class="contact-form">
+                  <h4 class="contact-form-top">CONTACT_FORM</h4>
+                  <div class="contact-content">
+                    <div class="contact-left">
+                      <h5 class="contact-input-title">Name</h5>
+                      <h5 class="contact-input-title">Email</h5>
+                      <h5 class="contact-input-title">Message</h5>
+                    </div>
+                    <div class="contact-right">
+                      <input
+                        class="contact-input"
+                        type="text"
+                        placeholder="Enter your name"
+                        name="from_name"
+                        id="name"
+                        required
+                      />
+                      <input
+                        type="email"
+                        name="from_email"
+                        id="email"
+                        class="contact-input"
+                        placeholder="Enter your email"
+                        required
+                      />
+                      <textarea
+                        class="contact-input contact-textarea"
+                        type="text"
+                        name="message"
+                        placeholder="Enter a message"
+                        id="message"
+                      ></textarea>
+                      <button
+                        type="submit"
+                        class="contact-button button-transition"
+                      >
+                        Send
+                      </button>
+                    </div>
                   </div>
-                  <div class="contact-right">
-                    <input
-                      class="contact-input"
-                      type="text"
-                      placeholder="Enter your name"
-                      name="from_name"
-                      id="name"
-                      required
-                    />
-                    <input
-                      type="email"
-                      name="from_email"
-                      id="email"
-                      class="contact-input"
-                      placeholder="Enter your email"
-                      required
-                    />
-                    <textarea
-                      class="contact-input contact-textarea"
-                      type="text"
-                      name="message"
-                      placeholder="Enter a message"
-                      id="message"
-                    ></textarea>
-                    <button
-                      type="submit"
-                      class="contact-button button-transition"
-                    >
-                      Send
-                    </button>
-                  </div>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
           </div>
         </div>

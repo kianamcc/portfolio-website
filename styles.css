@@ -70,16 +70,20 @@ h5 {
   height: 50px;
 }
 
-/* PAGES */
+/* WINDOW */
 .window-container {
   height: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   z-index: 1;
-  overflow-x: hidden;
+}
+
+#window {
+  height: 100%;
+  width: 100%;
+  background-color: #ffff;
 }
 
 @media only screen and (min-width: 768px) {
@@ -88,12 +92,17 @@ h5 {
   }
 }
 
-#window {
-  height: 100%;
-  width: 100%;
-  background-color: #ffff;
+@media only screen and (min-width: 321px) {
+  #window {
+    overflow: visible;
+    height: 100%;
+    width: 100%;
+  }
+}
 
-  @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
+  #window {
+    overflow: hidden;
     height: 90%;
     width: 90%;
     border-top: 2px white solid;
@@ -103,15 +112,16 @@ h5 {
   }
 }
 
-@media only screen and (min-width: 321px) {
+@media screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   #window {
-    overflow: visible;
+    height: 100%;
+    width: 100%;
+    border: none;
+    overflow-x: hidden;
   }
-}
 
-@media only screen and (min-width: 768px) {
-  #window {
-    overflow: hidden;
+  .window-container {
+    bottom: 0;
   }
 }
 
@@ -131,6 +141,12 @@ h5 {
   }
 }
 
+@media screen and (min-width: 320px) and (max-width: 896px) and (orientation: landscape) {
+  .content {
+    height: 75%;
+  }
+}
+
 .pageHeader {
   font-size: 2rem;
 }
@@ -142,6 +158,11 @@ h5 {
   gap: 18px;
   justify-content: center;
   align-items: center;
+}
+
+.home-container {
+  height: 100%;
+  overflow-y: scroll;
 }
 
 .home-name {
@@ -285,7 +306,7 @@ h5 {
 @media only screen and (min-width: 768px) {
   .about-container {
     gap: 35px;
-    height: 70vh;
+    height: 100%;
     overflow-y: scroll;
   }
 
@@ -405,7 +426,7 @@ h5 {
 
 @media only screen and (min-width: 321px) {
   #projectsContent {
-    margin: 0px 16px;
+    margin: 0px 18px;
     height: 85%;
   }
 
@@ -461,13 +482,18 @@ h5 {
 }
 
 /* CONTACT PAGE */
-.contact-container {
+.contact-content-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   gap: 18px;
+}
+
+.contact-container {
+  height: 100%;
+  overflow-y: scroll;
 }
 
 .contact-right {
