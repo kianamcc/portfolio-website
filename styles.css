@@ -145,7 +145,7 @@ h5 {
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 896px) and (orientation: landscape) {
+@media screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   .content {
     height: 75%;
   }
@@ -244,6 +244,17 @@ h5 {
 
   .home-description {
     align-self: inherit;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .home-description {
+    text-align: center;
+    align-self: center;
+  }
+
+  .home-intro-container {
+    margin-bottom: 50px;
   }
 }
 
@@ -742,7 +753,7 @@ h5 {
   border-bottom: 1.5px solid black;
 }
 
-@media screen and (min-width: 320px) and (max-width: 896px) and (orientation: landscape) {
+@media screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   .top {
     display: none;
   }
@@ -895,10 +906,11 @@ h5 {
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 896px) and (orientation: landscape) {
+@media screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   #mobileNav {
     background-color: #ffff;
     border-bottom: 2px solid #9600ff;
+    margin-top: 25px;
   }
 
   .mobile-nav-active {
