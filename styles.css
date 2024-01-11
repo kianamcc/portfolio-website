@@ -48,13 +48,6 @@ h5 {
   background-color: #557baa;
 }
 
-@media only screen and (min-width: 769px) {
-  #desktop {
-    height: 100%;
-    background-color: #557baa;
-  }
-}
-
 /* DESKTOP ICONS */
 .icons-container {
   display: flex;
@@ -69,6 +62,13 @@ h5 {
 .icon {
   width: 50px;
   height: 50px;
+}
+
+@media only screen and (min-width: 769px) {
+  #desktop {
+    height: 100%;
+    background-color: #557baa;
+  }
 }
 
 /* WINDOW */
@@ -121,6 +121,7 @@ h5 {
   #window {
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
   }
 
   .window-container {
@@ -741,6 +742,12 @@ h5 {
   border-bottom: 1.5px solid black;
 }
 
+@media screen and (min-width: 320px) and (max-width: 896px) and (orientation: landscape) {
+  .top {
+    display: none;
+  }
+}
+
 /* NAV SECTION */
 #nav {
   background-color: #9600ff;
@@ -860,20 +867,6 @@ h5 {
   display: none;
 }
 
-@media only screen and (min-width: 768px) {
-  #mobileNav {
-    display: none;
-  }
-}
-
-.active {
-  display: block;
-}
-
-.inactive {
-  display: none;
-}
-
 .mobile-nav-links-active {
   display: flex;
   gap: 11px;
@@ -894,6 +887,31 @@ h5 {
 
 .mobile-nav-active {
   color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  #mobileNav {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 896px) and (orientation: landscape) {
+  #mobileNav {
+    background-color: #ffff;
+    border-bottom: 2px solid #9600ff;
+  }
+
+  .mobile-nav-active {
+    color: #9600ff;
+  }
+}
+
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
 }
 
 /* FOOTER */
