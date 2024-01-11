@@ -508,6 +508,7 @@ h5 {
   border-left: 1.5px solid grey;
   background-color: #eaeaea;
   box-shadow: 2px 2px 2px black;
+  color: initial;
 }
 
 .contact-button:hover {
